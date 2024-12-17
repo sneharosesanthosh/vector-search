@@ -1,0 +1,73 @@
+### Health Check
+GET http://localhost:8000/health
+
+### Create Collection
+POST http://localhost:8000/create_collection
+Content-Type: application/json
+
+{
+    "collection_name": "sneha_collection",
+    "distance_metric": "Cosine"
+}
+
+### Get Embedding with Metadata
+POST http://localhost:8000/get_embedding
+Content-Type: application/json
+
+{
+    "collection_name": "my_collection",
+    "text": "Hello, this is a test sentence.",
+    "metadata": {
+        "category": "greeting",
+        "language": "english",
+        "timestamp": "2024-02-20"
+    }
+}
+
+### Get Embedding without Metadata
+POST http://localhost:8000/get_embedding
+Content-Type: application/json
+
+{
+    "collection_name": "my_collection",
+    "text": "The quick brown fox jumps over the lazy dog."
+}
+
+### Search API Test
+POST http://localhost:8000/search/
+Content-Type: application/json
+
+{
+    "text": "What is machine learning?",
+    "limit": 5
+}
+
+### Search API Test with different query
+POST http://localhost:8000/search/
+Content-Type: application/json
+
+{
+    "text": "I love to write paragraphs",
+    "limit": 3
+}
+
+
+### Get embeddings for multiple texts
+POST http://localhost:8000/get_embeddings/
+Content-Type: application/json
+
+{
+    "texts": [
+        "What is machine learning?",
+        "How does artificial intelligence work?",
+        "Explain deep learning concepts"
+    ]
+}
+
+### to delete all points in a collection 
+DELETE http://localhost:8000/delete_points/
+Content-Type: application/json
+
+{
+    "collection_name": "sneha"
+} 

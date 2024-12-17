@@ -1,0 +1,11 @@
+torch>=2.0.0
+transformers>=4.34.0
+sentence-transformers>=2.2.2
+numpy>=1.23.0
+pandas>=1.4.3
+scikit-learn>=1.6.0
+nltk
+fastapi
+uvicorn
+qdrant-client
+pydantic
